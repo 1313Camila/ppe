@@ -1,0 +1,106 @@
+:root {
+    --body-bg: #fce4ec; 
+    --card-bg: #ffffff;
+    --text-color: #333333;
+    --border-color: #dee2e6;
+    --table-header-bg: #f8f9fa;
+    --link-color: #d63384; 
+
+    --pink-primary: #ff69b4; 
+    --pink-secondary: #ffb6c1; 
+    --pink-gradient: linear-gradient(45deg, #ff69b4, #ff1493);
+}
+
+html.dark-theme {
+    --body-bg: #121212;
+    --card-bg: #1e1e1e;
+    --text-color: #e0e0e0;
+    --border-color: #444444;
+    --table-header-bg: #2a2a2a;
+    --link-color: #ff80bf; 
+}
+
+body {
+    background-color: var(--body-bg);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.bg-pink-gradient {
+    background: var(--pink-gradient) !important;
+}
+
+.btn-pink {
+    background-color: var(--pink-primary);
+    border-color: var(--pink-primary);
+    color: white;
+}
+.btn-pink:hover {
+    background-color: #ff1493;
+    border-color: #ff1493;
+    color: white;
+}
+
+.bg-pink-light {
+    background-color: var(--pink-secondary) !important;
+}
+
+.card, .modal-content {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+.card-header, .modal-header {
+    border-bottom-color: var(--border-color);
+}
+.modal-header .btn-close {
+    filter: none;
+}
+
+html.dark-theme .modal-header .btn-close {
+    filter: invert(1);
+}
+
+.table {
+    color: var(--text-color);
+}
+.table-light {
+    --bs-table-bg: var(--table-header-bg);
+    --bs-table-border-color: var(--border-color);
+}
+.table-hover > tbody > tr:hover > * {
+    --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
+}
+html.dark-theme .table-hover > tbody > tr:hover > * {
+    --bs-table-hover-bg: rgba(255, 255, 255, 0.075);
+    color: #fff;
+}
+
+.form-control, .form-select {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
+.form-control:focus, .form-select:focus {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border-color: var(--pink-primary);
+    box-shadow: 0 0 0 0.25rem rgba(255, 105, 180, 0.25);
+}
+label, .form-label {
+    color: var(--text-color);
+}
+html.dark-theme .form-floating > label {
+    color: #6c757d;
+}
+
+.vh-100 {
+    min-height: 100vh;
+}
+.card-footer {
+    border-top-color: var(--border-color);
+}
+
+#theme-switcher {
+    cursor: pointer;
+}

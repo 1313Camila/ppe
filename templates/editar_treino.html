@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Editar Treino{% endblock %}
+
+{% block content %}
+<h1 class="display-5 mb-4">Editar Treino de {{ treino.aluno.nome }}</h1>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <form action="{{ url_for('edit_treino', id=treino.id) }}" method="POST">
+            <div class="mb-3">
+                <label for="descricao" class="form-label">Descrição do Exercício</label>
+                <input type="text" class="form-control" id="descricao" name="descricao" value="{{ treino.descricao }}" required>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="series" class="form-label">Séries</label>
+                    <input type="number" class="form-control" id="series" name="series" value="{{ treino.series }}" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="repeticoes" class="form-label">Repetições</label>
+                    <input type="number" class="form-control" id="repeticoes" name="repeticoes" value="{{ treino.repeticoes }}" required>
+                </div>
+            </div>
+            <a href="{{ url_for('treinos', aluno_id=treino.aluno_id) }}" class="btn btn-secondary">Cancelar</a>
+            <button type="submit" class="btn btn-pink">Salvar Alterações</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

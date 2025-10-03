@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard - RA FITNESS {% endblock %}
+
+{% block content %}
+<div class="p-5 mb-4 bg-light rounded-3" style="background-color: var(--card-bg) !important;">
+    <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">Bem-vindo(a), {{ current_user.username }}!</h1>
+        <p class="col-md-8 fs-4">
+            Este é o painel de controle da Academia RA FITNESS.
+            Use o menu de navegação ou os cartões abaixo para gerenciar os alunos e seus treinos.
+        </p>
+    </div>
+</div>
+
+<div class="row align-items-md-stretch">
+    <div class="col-md-6">
+        <div class="h-100 p-5 text-bg-dark rounded-3" style="background: var(--pink-gradient) !important;">
+            <h2><i class="bi bi-people-fill"></i> Gerenciar Alunos</h2>
+            <p>Adicione, visualize, edite e remova os alunos cadastrados no sistema.</p>
+            <a href="{{ url_for('alunos') }}" class="btn btn-outline-light" type="button">
+                Ir para Alunos
+            </a>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="h-100 p-5 border rounded-3" style="background-color: var(--card-bg) !important;">
+            <h2><i class="bi bi-gear-fill"></i> Configurações</h2>
+            <p>Em breve, aqui você poderá ajustar as configurações gerais do sistema (funcionalidade a ser implementada).</p>
+            <button class="btn btn-outline-secondary" type="button" disabled>Acessar Configurações</button>
+        </div>
+    </div>
+</div>
+{% endblock %}
